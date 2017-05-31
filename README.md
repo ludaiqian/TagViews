@@ -13,6 +13,8 @@
 #导入
 
 目前jcenter正在审核
+
+
 #使用方式
 <blockquote>
    <com.flqy.tagviews.TagLayout
@@ -32,7 +34,7 @@
         app:tagTextVerticalPadding="4dp"
         app:tagMinWidth="70dp"
         app:tagSelectMode="multiple"/>
-        <blockquote>
+</blockquote>
         
 #attrs属性如下：
 <blockquote>
