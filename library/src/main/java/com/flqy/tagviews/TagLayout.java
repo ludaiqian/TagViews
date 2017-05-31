@@ -320,12 +320,12 @@ public class TagLayout extends ViewGroup {
 
     public void selectTagPositions(List<Integer> selectedPos) {
         for (int i = 0; i < selectedPos.size(); i++) {
-            selectChild(selectedPos.get(i));
+            selectPosition(selectedPos.get(i));
         }
         selectedChildCount = selectedPos.size();
     }
 
-    public void selectChild(int index) {
+    public void selectPosition(int index) {
         getChildAt(index).setSelected(true);
         selectedChildCount = 1;
     }
