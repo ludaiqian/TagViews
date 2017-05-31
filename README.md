@@ -14,7 +14,7 @@
 
 目前jcenter正在审核
 #使用方式
-
+<blockquote>
    <com.flqy.tagviews.TagLayout
         android:id="@+id/skillTags"
         android:layout_width="match_parent"
@@ -32,8 +32,10 @@
         app:tagTextVerticalPadding="4dp"
         app:tagMinWidth="70dp"
         app:tagSelectMode="multiple"/>
+        <blockquote>
         
 #attrs属性如下：
+<blockquote>
 
  <declare-styleable name="TagLayout">
         <attr name="horizontalSpace" format="dimension" /><!-- tag之间的横向间距-->
@@ -62,7 +64,8 @@
         <attr name="preCache" format="boolean" /><!-- 预缓存，初始化时预先添加一定数量的childView-->
 
     </declare-styleable>
-
+ 
+</blockquote>
 v1.0.0
 
 
