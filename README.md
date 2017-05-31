@@ -17,7 +17,7 @@
 
 #使用方式
 <pre><code>
-   <com.flqy.tagviews.TagLayout
+   &lt;com.flqy.tagviews.TagLayout
         android:id="@+id/skillTags"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,9 +33,8 @@
         app:tagTextHorizontalPadding="8dp"
         app:tagTextVerticalPadding="4dp"
         app:tagMinWidth="70dp"
-        app:tagSelectMode="multiple"/>
+        app:tagSelectMode="multiple"&gt;
 </code></pre>
-        
 #attrs属性如下：
 <pre><code>
 
