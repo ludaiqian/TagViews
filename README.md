@@ -40,8 +40,26 @@ add to jcenter仍在审核，开发人员可自行下载代码进行使用。
 </code></pre>
 ##activity
 <pre><code>
-  tagLayout = (TagLayout) findViewById(R.id.skillTags);
-  tagLayout.setTags("幽默风趣","诚实可靠","人脉广","健身控","有才华","为人大方","老司机","爱摄影","文艺范","怪蜀黍","高富帅","矮穷挫");
+  tagLayout = (TagLayout) findViewById(R.id.tagLayout);
+        tagLayout.setTags("幽默风趣","诚实可靠","人脉广","健身控","有才华","为人大方","老司机","爱摄影","文艺范","怪蜀黍","高富帅","矮穷挫");
+        //添加click事件
+        tagLayout.setOnItemClickListener(new TagLayout.OnItemClickListener() {
+            @Override
+            public void onItemClick(TextView child, int index) {
+
+            }
+        });
+        //添加select事件
+        tagLayout.setOnSelectChangeListener(new TagLayout.OnSelectChangeListener() {
+            @Override
+            public void onSelectChange(TextView child, int index, boolean isSelected) {
+
+            }
+        });
+        //设置选中的child位置
+        tagLayout.selectTagPositions(0,1,2);
+        //获取选中的child位置
+        tagLayout.getSelectedTagPositions();
 </code></pre>
 #attrs定义属性及属性描述如下：
 <pre><code>
