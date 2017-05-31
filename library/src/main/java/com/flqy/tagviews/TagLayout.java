@@ -318,7 +318,7 @@ public class TagLayout extends ViewGroup {
         this.mTags = tagsList;
     }
 
-    public void selectChildren(List<Integer> selectedPos) {
+    public void selectTagPositions(List<Integer> selectedPos) {
         for (int i = 0; i < selectedPos.size(); i++) {
             selectChild(selectedPos.get(i));
         }

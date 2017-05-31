@@ -31,8 +31,8 @@ public class LabelsActivity extends AppCompatActivity {
         selectedPos.add(3);
         selectedPos.add(4);
         this.tags.setTags(generateTags());
-        //设置默认选择
-//        this.tags.selectChildren(selectedPos);
+        //设置选中的tag
+        this.tags.selectTagPositions(selectedPos);
         //最大可选择数量
         this.tags.setMaximumSelectionCount(10);
 
@@ -66,6 +66,8 @@ public class LabelsActivity extends AppCompatActivity {
                 inputView.setSelection(inputView.getText().length());
             }
         });
+        //得到选中的tag
+        tags.getSelectedTagPositions();
     }
 
     private List<String> generateTags() {
