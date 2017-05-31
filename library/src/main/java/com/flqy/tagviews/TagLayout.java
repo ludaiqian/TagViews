@@ -369,7 +369,7 @@ public class TagLayout extends ViewGroup {
 
     public void selectTagPositions(List<Integer> selectedPos) {
         for (int i = 0; i < selectedPos.size(); i++) {
-            getChildAt(i).setSelected(true);
+            getChildAt(selectedPos.get(i)).setSelected(true);
         }
         mSelectedChildCount = selectedPos.size();
     }
