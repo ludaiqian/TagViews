@@ -3,6 +3,8 @@ package com.flqy.tagviews;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -10,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,6 +22,9 @@ import java.util.List;
  */
 
 public class TagLayout extends ViewGroup {
+    private static final String INSTANCE_STATE = "saved_instance";
+    private static final String TAGS = "tags";
+    private static final String SELECTED_TAG_POSITIONS = "selected_tag_positions";
     private static final int SELECT_MODE_NONE = 0;
     private static final int SELECT_MODE_SINGLE = 1;
     private static final int SELECT_MODE_MULTIPLE = 2;
@@ -38,7 +42,7 @@ public class TagLayout extends ViewGroup {
     private int mVerticalSpace = 0;
     private int maxLines = Integer.MAX_VALUE;
     private int mMaximumSelectionCount = Integer.MAX_VALUE;
-    private List<String> mTags;
+    private ArrayList<String> mTags;
     private LayoutInflater mInflater;
     private Integer mTagBackground;
     private Integer mTagMinWidth;
@@ -255,6 +259,32 @@ public class TagLayout extends ViewGroup {
         mHasMeasured = true;
     }
 
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        final Bundle bundle = new Bundle();
+        bundle.putParcelable(INSTANCE_STATE, super.onSaveInstanceState());
+        bundle.putStringArrayList(TAGS, mTags);
+        bundle.putIntegerArrayList(SELECTED_TAG_POSITIONS, (ArrayList<Integer>) getSelectedTagPositions());
+        return bundle;
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
+            mTags = bundle.getStringArrayList(TAGS);
+            List<Integer> selectedTagPositions = bundle.getIntegerArrayList(SELECTED_TAG_POSITIONS);
+            if (selectedTagPositions != null && selectedTagPositions.size() > 0) {
+                selectTagPositions(selectedTagPositions);
+            }
+            super.onRestoreInstanceState(bundle.getParcelable(INSTANCE_STATE));
+        } else {
+            super.onRestoreInstanceState(state);
+        }
+
+    }
+
     public void setTags(String... tagsList) {
         setTags(Arrays.asList(tagsList));
     }
@@ -315,17 +345,29 @@ public class TagLayout extends ViewGroup {
             }
         }
 
-        this.mTags = tagsList;
+        this.mTags = wrap(tagsList);
+    }
+
+    private ArrayList<String> wrap(List<String> tagsList) {
+        if (tagsList instanceof ArrayList) {
+            return (ArrayList<String>) tagsList;
+        } else {
+            return new ArrayList<>(tagsList);
+        }
+    }
+
+    public void selectTagPositions(Integer... selectedPos) {
+        selectTagPositions(Arrays.asList(selectedPos));
     }
 
     public void selectTagPositions(List<Integer> selectedPos) {
         for (int i = 0; i < selectedPos.size(); i++) {
-            selectPosition(selectedPos.get(i));
+            selectTagPosition(selectedPos.get(i));
         }
         selectedChildCount = selectedPos.size();
     }
 
-    public void selectPosition(int index) {
+    public void selectTagPosition(int index) {
         getChildAt(index).setSelected(true);
         selectedChildCount = 1;
     }

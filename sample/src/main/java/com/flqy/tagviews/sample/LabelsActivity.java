@@ -7,9 +7,6 @@ import android.widget.TextView;
 
 import com.flqy.tagviews.TagLayout;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by lu on 2017/4/8.
  */
@@ -26,14 +23,12 @@ public class LabelsActivity extends AppCompatActivity {
         this.tags = (TagLayout) findViewById(R.id.skillTags);
         this.inputView = (EditText) findViewById(R.id.skillsInput);
 
-        List<Integer> selectedPos = new ArrayList<>();
-        selectedPos.add(2);
-        selectedPos.add(3);
-        selectedPos.add(4);
+
         this.tags.setTags(generateTags());
-        //设置选中的tag
-//        this.tags.selectTagPositions(selectedPos);
-//        this.tags.selectPosition(1);
+        //设置选中的tag 当前选中第2、3、4个
+//        this.tags.selectTagPositions(2,3,4);
+        //设置选中的tag 当前选中第1个
+//        this.tags.selectTagPosition(1);
         //最大可选择数量
         this.tags.setMaximumSelectionCount(10);
 
@@ -71,15 +66,11 @@ public class LabelsActivity extends AppCompatActivity {
         tags.getSelectedTagPositions();
     }
 
-    private List<String> generateTags() {
+    private String[] generateTags() {
         String hobbies = "篮球、羽毛球、兵乓球、足球、滑板、滑旱冰、跑步、跳绳、举重、听音乐、" +
                 "看电影、绘画、写小说、看书、旅游、象棋、围棋、dota2、穿越火线、英雄联盟、王者荣耀";
-        String[] hobbyArray = hobbies.split("、");
-        ArrayList<String> tags = new ArrayList<>();
-        for (String hobby : hobbyArray) {
-            tags.add(hobby);
-        }
-        return tags;
+
+        return  hobbies.split("、");
     }
 
 
