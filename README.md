@@ -38,33 +38,34 @@
 #attrs属性如下：
 <pre><code>
 
- <declare-styleable name="TagLayout">
-        <attr name="horizontalSpace" format="dimension" /><!-- tag之间的横向间距-->
-        <attr name="verticalSpace" format="dimension" /><!-- tag之间的纵向间距-->
-        <attr name="maxLines" format="integer" /><!-- 最大行数-->
-        <attr name="tagResId" format="reference" /><!-- tag TextView资源id，可将tag文字大小、颜色、背景、padding等单独配置提升复用性-->
-        <attr name="tagTextSize" format="dimension" /><!-- tag文字大小-->
-        <attr name="tagBackground" format="reference" /><!-- tag背景-->
-        <attr name="tagMinWidth" format="dimension" /><!-- tag最小宽度-->
-        <attr name="tagTextColor" format="color" /><!-- tag文字颜色-->
-        <attr name="tagTextHorizontalPadding" format="dimension" /><!-- tag 内部横向padding-->
-        <attr name="tagTextVerticalPadding" format="dimension" /><!-- tag 内部纵向padding-->
-        <attr name="maximumSelectionCount" format="integer" /><!-- 设置最多能够选择的个数-->
-        <attr name="tagSelectMode" format="enum"><!-- 单选 多选-->
-            <enum name="single" value="1"></enum><!--单选-->
-            <enum name="multiple" value="2"></enum><!--多选-->
-            <enum name="none" value="0"></enum><!--不可选-->
-        </attr>
-        <!--以下配置建议在列表中提高性能使用-->
-        <attr name="cacheMode" format="enum"><!-- 缓存方式，常用方式下没有影响，当tag需要在RecycleView或者ListView中显示，设置为lazy能显著提高性能-->
-            <enum name="auto" value="0"></enum><!--自动根据当前tag数量来增删childView，默认方式-->
-            <enum name="lazy" value="1"></enum><!--tag数量会根据最大tag数量来决定，大于会等于tag数量的childView自动隐藏，而不是删除，性能最佳-->
-            <enum name="none" value="2"></enum><!--不使用缓存-->
-        </attr>
-        <attr name="maxTags" format="integer" /><!--tags最大显示数量-->
-        <attr name="preCache" format="boolean" /><!-- 预缓存，初始化时预先添加一定数量的childView-->
 
-    </declare-styleable>
+ &lt;declare-styleable name="TagLayout">
+        &lt;attr name="horizontalSpace" format="dimension" "&gt;&lt;!-- tag之间的横向间距-->
+        &lt;attr name="verticalSpace" format="dimension" "&gt;&lt;!-- tag之间的纵向间距-->
+        &lt;attr name="maxLines" format="integer" "&gt;&lt;!-- 最大行数-->
+        &lt;attr name="tagResId" format="reference" "&gt;&lt;!-- tag TextView资源id，可将tag文字大小、颜色、背景、padding等单独配置提升复用性-->
+        &lt;attr name="tagTextSize" format="dimension" "&gt;&lt;!-- tag文字大小-->
+        &lt;attr name="tagBackground" format="reference" "&gt;&lt;!-- tag背景-->
+        &lt;attr name="tagMinWidth" format="dimension" "&gt;&lt;!-- tag最小宽度-->
+        &lt;attr name="tagTextColor" format="color" "&gt;&lt;!-- tag文字颜色-->
+        &lt;attr name="tagTextHorizontalPadding" format="dimension" "&gt;&lt;!-- tag 内部横向padding-->
+        &lt;attr name="tagTextVerticalPadding" format="dimension" "&gt;&lt;!-- tag 内部纵向padding-->
+        &lt;attr name="maximumSelectionCount" format="integer" "&gt;&lt;!-- 设置最多能够选择的个数-->
+        &lt;attr name="tagSelectMode" format="enum">&lt;!-- 单选 多选-->
+            &lt;enum name="single" value="1">&lt;/enum>&lt;!--单选-->
+            &lt;enum name="multiple" value="2">&lt;/enum>&lt;!--多选-->
+            &lt;enum name="none" value="0">&lt;/enum>&lt;!--不可选-->
+        &lt;/attr>
+        &lt;!--以下配置建议在列表中提高性能使用-->
+        &lt;attr name="cacheMode" format="enum">&lt;!-- 缓存方式，常用方式下没有影响，当tag需要在RecycleView或者ListView中显示，设置为lazy能显著提高性能-->
+            &lt;enum name="auto" value="0">&lt;/enum>&lt;!--自动根据当前tag数量来增删childView，默认方式-->
+            &lt;enum name="lazy" value="1">&lt;/enum>&lt;!--tag数量会根据最大tag数量来决定，大于会等于tag数量的childView自动隐藏，而不是删除，性能最佳-->
+            &lt;enum name="none" value="2">&lt;/enum>&lt;!--不使用缓存-->
+        &lt;/attr>
+        &lt;attr name="maxTags" format="integer" "&gt;&lt;!--tags最大显示数量-->
+        &lt;attr name="preCache" format="boolean" "&gt;&lt;!-- 预缓存，初始化时预先添加一定数量的childView-->
+
+    &lt;/declare-styleable>
  
 </code></pre>
 v1.0.0
