@@ -17,6 +17,7 @@ add to jcenter仍在审核，开发人员可自行下载代码进行使用。
 
 
 #使用方式
+
 ##xml
 <pre><code>
    &lt;com.flqy.tagviews.TagLayout
