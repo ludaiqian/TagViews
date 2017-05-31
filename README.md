@@ -13,10 +13,12 @@
  
 #导入
 
-jcenter审核出现问题，可自行下载代码进行使用。
+目前无法导入，add to jcenter仍在审核，library仅有一个类，开发人员可自行下载代码进行使用。
 
 
 #使用方式
+
+##xml
 <pre><code>
    &lt;com.flqy.tagviews.TagLayout
         android:id="@+id/skillTags"
@@ -35,6 +37,29 @@ jcenter审核出现问题，可自行下载代码进行使用。
         app:tagTextVerticalPadding="4dp"
         app:tagMinWidth="70dp"
         app:tagSelectMode="multiple"&gt;
+</code></pre>
+##activity
+<pre><code>
+  tagLayout = (TagLayout) findViewById(R.id.tagLayout);
+  tagLayout.setTags("幽默风趣","诚实可靠","人脉广","健身控","有才华","为人大方","老司机","爱摄影","文艺范","怪蜀黍","高富帅","矮穷挫");
+  //添加click事件
+  tagLayout.setOnItemClickListener(new TagLayout.OnItemClickListener() {
+      @Override
+      public void onItemClick(TextView child, int index) {
+
+      }
+  });
+  //添加select事件
+  tagLayout.setOnSelectChangeListener(new TagLayout.OnSelectChangeListener() {
+      @Override
+      public void onSelectChange(TextView child, int index, boolean isSelected) {
+
+      }
+  });
+  //设置选中的child位置
+  tagLayout.selectTagPositions(0,1,2);
+  //获取选中的child位置
+  tagLayout.getSelectedTagPositions();
 </code></pre>
 #attrs定义属性及属性描述如下：
 <pre><code>
