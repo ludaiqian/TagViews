@@ -31,7 +31,9 @@ public class LabelsActivity extends AppCompatActivity {
         selectedPos.add(3);
         selectedPos.add(4);
         this.tags.setTags(generateTags());
-        this.tags.selectChildren(selectedPos);
+        //设置默认选择
+//        this.tags.selectChildren(selectedPos);
+        //最大可选择数量
         this.tags.setMaximumSelectionCount(10);
 
         this.tags.setOnSelectChangeListener(new TagLayout.OnSelectChangeListener() {

@@ -5,6 +5,7 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -134,6 +135,7 @@ public class TagLayout extends ViewGroup {
             addedTag = (TextView) mInflater.inflate(mTagResId, null);
         } else {
             addedTag = new TextView(getContext());
+            addedTag.setGravity(Gravity.CENTER);
         }
         final TextView tagView = addedTag;
         if (hasValue(mTagBackground)) {

@@ -15,6 +15,8 @@
         android:padding="16dp"
         android:textSize="14sp"
         android:enabled="false"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
         />
 
     <com.flqy.tagviews.TagLayout
