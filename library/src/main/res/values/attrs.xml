@@ -19,7 +19,7 @@
         <attr name="horizontalSpace" format="dimension" /><!-- tag之间的横向间距-->
         <attr name="verticalSpace" format="dimension" /><!-- tag之间的纵向间距-->
         <attr name="maxLines" format="integer" /><!-- 最大行数-->
-        <attr name="tagResId" format="reference" /><!-- tag TextView资源id-->
+        <attr name="tagResId" format="reference" /><!-- tag TextView资源id，可将tag文字大小、颜色、背景、padding等单独配置提升复用性-->
         <attr name="tagTextSize" format="dimension" /><!-- tag文字大小-->
         <attr name="tagBackground" format="reference" /><!-- tag背景-->
         <attr name="tagMinWidth" format="dimension" /><!-- tag最小宽度-->
@@ -33,26 +33,14 @@
             <enum name="none" value="0"></enum><!--不可选-->
         </attr>
         <!--以下配置建议在列表中提高性能使用-->
-        <attr name="cacheMode" format="enum"><!-- 缓存方式，常用方式下没有影响，当tag需要在RecycleView或者ListView中显示，合理设置能显著提高性能-->
+        <attr name="cacheMode" format="enum"><!-- 缓存方式，常用方式下没有影响，当tag需要在RecycleView或者ListView中显示，设置为lazy能显著提高性能-->
             <enum name="auto" value="0"></enum><!--自动根据当前tag数量来增删childView，默认方式-->
-            <enum name="lazy" value="1"></enum><!--tag数量会根据最大tag数量来决定，大于会等于tag数量的childView自动隐藏，性能最佳-->
+            <enum name="lazy" value="1"></enum><!--tag数量会根据最大tag数量来决定，大于会等于tag数量的childView自动隐藏，而不是删除，性能最佳-->
             <enum name="none" value="2"></enum><!--不使用缓存-->
         </attr>
-        <attr name="maxTags" format="integer" /><!--tags最大数量-->
+        <attr name="maxTags" format="integer" /><!--tags最大显示数量-->
         <attr name="preCache" format="boolean" /><!-- 预缓存，初始化时预先添加一定数量的childView-->
 
-    </declare-styleable>
-    <declare-styleable name="LimitedTextLayout">
-        <attr name="maxLength" format="integer" /><!--最大输入文本长度-->
-        <attr name="lines" format="integer" /><!--行数-->
-        <attr name="hint" format="string" /><!--hint-->
-    </declare-styleable>
-    <declare-styleable name="ExpandableTextView">
-        <attr name="maxCollapsedLines" format="integer" />
-        <attr name="animDuration" format="integer" />
-        <attr name="animAlphaStart" format="float" />
-        <attr name="expandDrawable" format="reference" />
-        <attr name="collapseDrawable" format="reference" />
     </declare-styleable>
 
 </resources>
