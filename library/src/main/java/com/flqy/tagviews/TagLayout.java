@@ -197,7 +197,7 @@ public class TagLayout extends ViewGroup {
                         mCurrentSelected.setSelected(false);
                     }
                     tagView.setSelected(true);
-                    mSelectedChildCount=1;
+                    mSelectedChildCount = 1;
                     mCurrentSelected = tagView;
                     if (onSelectChangeListener != null) {
                         onSelectChangeListener.onSelectChange(tagView, position, tagView.isSelected());
@@ -265,8 +265,13 @@ public class TagLayout extends ViewGroup {
     protected Parcelable onSaveInstanceState() {
         final Bundle bundle = new Bundle();
         bundle.putParcelable(INSTANCE_STATE, super.onSaveInstanceState());
-        bundle.putStringArrayList(TAGS, wrap(mTags));
-        bundle.putIntegerArrayList(SELECTED_TAG_POSITIONS, wrap(getSelectedTagPositions()));
+        if (mTags != null) {
+            bundle.putStringArrayList(TAGS, wrap(mTags));
+        }
+        List<Integer> selectedPositions = getSelectedTagPositions();
+        if (selectedPositions != null) {
+            bundle.putIntegerArrayList(SELECTED_TAG_POSITIONS, wrap(selectedPositions));
+        }
         return bundle;
 
     }
@@ -371,7 +376,7 @@ public class TagLayout extends ViewGroup {
 
     public void selectTagPosition(int index) {
         getChildAt(index).setSelected(true);
-        mCurrentSelected= (TextView) getChildAt(index);
+        mCurrentSelected = (TextView) getChildAt(index);
         mSelectedChildCount = 1;
     }
 
