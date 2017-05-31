@@ -17,6 +17,7 @@ add to jcenter仍在审核，开发人员可自行下载代码进行使用。
 
 
 #使用方式
+##xml
 <pre><code>
    &lt;com.flqy.tagviews.TagLayout
         android:id="@+id/skillTags"
@@ -36,7 +37,7 @@ add to jcenter仍在审核，开发人员可自行下载代码进行使用。
         app:tagMinWidth="70dp"
         app:tagSelectMode="multiple"&gt;
 </code></pre>
-
+##activity
 <pre><code>
   tagLayout = (TagLayout) findViewById(R.id.skillTags);
   tagLayout.setTags("幽默风趣","诚实可靠","人脉广","健身控","有才华","为人大方","老司机","爱摄影","文艺范","怪蜀黍","高富帅","矮穷挫");
