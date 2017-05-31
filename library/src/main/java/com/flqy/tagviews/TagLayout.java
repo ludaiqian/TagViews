@@ -60,6 +60,7 @@ public class TagLayout extends ViewGroup {
     private int mLastMeasureWidth;
     private int mLstMeasureHeight;
 
+    private int mSelectedChildCount;
     public interface OnSelectChangeListener {
         void onSelectChange(TextView child, int index, boolean isSelected);
     }
@@ -131,7 +132,6 @@ public class TagLayout extends ViewGroup {
         }
     }
 
-    private int selectedChildCount;
 
     private TextView addTag(final String tagText) {
         TextView addedTag;
@@ -179,14 +179,14 @@ public class TagLayout extends ViewGroup {
                     onItemClickListener.onItemClick(tagView, position);
                 }
                 if (mTagSelectMode == SELECT_MODE_MULTIPLE) {
-                    if (selectedChildCount >= mMaximumSelectionCount && !tagView.isSelected()) {
+                    if (mSelectedChildCount >= mMaximumSelectionCount && !tagView.isSelected()) {
                         return;
                     }
                     tagView.setSelected(!tagView.isSelected());
                     if (tagView.isSelected()) {
-                        selectedChildCount++;
+                        mSelectedChildCount++;
                     } else {
-                        selectedChildCount--;
+                        mSelectedChildCount--;
                     }
                     if (onSelectChangeListener != null) {
                         onSelectChangeListener.onSelectChange(tagView, position, tagView.isSelected());
@@ -362,14 +362,14 @@ public class TagLayout extends ViewGroup {
 
     public void selectTagPositions(List<Integer> selectedPos) {
         for (int i = 0; i < selectedPos.size(); i++) {
-            selectTagPosition(selectedPos.get(i));
+            getChildAt(i).setSelected(true);
         }
-        selectedChildCount = selectedPos.size();
+        mSelectedChildCount = selectedPos.size();
     }
 
     public void selectTagPosition(int index) {
         getChildAt(index).setSelected(true);
-        selectedChildCount = 1;
+        mSelectedChildCount = 1;
     }
 
     public void setMaximumSelectionCount(int maximumSelectionCount) {
