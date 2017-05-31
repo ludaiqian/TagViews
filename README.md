@@ -16,7 +16,7 @@
 
 
 #使用方式
-<blockquote>
+<pre><code>
    <com.flqy.tagviews.TagLayout
         android:id="@+id/skillTags"
         android:layout_width="match_parent"
@@ -34,10 +34,10 @@
         app:tagTextVerticalPadding="4dp"
         app:tagMinWidth="70dp"
         app:tagSelectMode="multiple"/>
-</blockquote>
+</code></pre>
         
 #attrs属性如下：
-<blockquote>
+<pre><code>
 
  <declare-styleable name="TagLayout">
         <attr name="horizontalSpace" format="dimension" /><!-- tag之间的横向间距-->
@@ -67,7 +67,7 @@
 
     </declare-styleable>
  
-</blockquote>
+</code></pre>
 v1.0.0
 
 
