@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TagViews</string>
+    <string name="mult_labs">标签多选</string>
+    <string name="simple_lables">标签简单的使用</string>
+</resources>
