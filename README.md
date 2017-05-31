@@ -35,10 +35,8 @@
         app:tagMinWidth="70dp"
         app:tagSelectMode="multiple"&gt;
 </code></pre>
-#attrs属性如下：
+#attrs定义属性及属性描述如下：
 <pre><code>
-
-
  &lt;declare-styleable name="TagLayout">
         &lt;attr name="horizontalSpace" format="dimension" "&gt;&lt;!-- tag之间的横向间距-->
         &lt;attr name="verticalSpace" format="dimension" "&gt;&lt;!-- tag之间的纵向间距-->
