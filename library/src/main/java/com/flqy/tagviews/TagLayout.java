@@ -42,7 +42,7 @@ public class TagLayout extends ViewGroup {
     private int mVerticalSpace = 0;
     private int maxLines = Integer.MAX_VALUE;
     private int mMaximumSelectionCount = Integer.MAX_VALUE;
-    private ArrayList<String> mTags;
+    private List<String> mTags;
     private LayoutInflater mInflater;
     private Integer mTagBackground;
     private Integer mTagMinWidth;
@@ -61,6 +61,7 @@ public class TagLayout extends ViewGroup {
     private int mLstMeasureHeight;
 
     private int mSelectedChildCount;
+
     public interface OnSelectChangeListener {
         void onSelectChange(TextView child, int index, boolean isSelected);
     }
@@ -196,6 +197,7 @@ public class TagLayout extends ViewGroup {
                         mCurrentSelected.setSelected(false);
                     }
                     tagView.setSelected(true);
+                    mSelectedChildCount=1;
                     mCurrentSelected = tagView;
                     if (onSelectChangeListener != null) {
                         onSelectChangeListener.onSelectChange(tagView, position, tagView.isSelected());
@@ -263,8 +265,8 @@ public class TagLayout extends ViewGroup {
     protected Parcelable onSaveInstanceState() {
         final Bundle bundle = new Bundle();
         bundle.putParcelable(INSTANCE_STATE, super.onSaveInstanceState());
-        bundle.putStringArrayList(TAGS, mTags);
-        bundle.putIntegerArrayList(SELECTED_TAG_POSITIONS, (ArrayList<Integer>) getSelectedTagPositions());
+        bundle.putStringArrayList(TAGS, wrap(mTags));
+        bundle.putIntegerArrayList(SELECTED_TAG_POSITIONS, wrap(getSelectedTagPositions()));
         return bundle;
 
     }
@@ -345,14 +347,14 @@ public class TagLayout extends ViewGroup {
             }
         }
 
-        this.mTags = wrap(tagsList);
+        this.mTags = tagsList;
     }
 
-    private ArrayList<String> wrap(List<String> tagsList) {
-        if (tagsList instanceof ArrayList) {
-            return (ArrayList<String>) tagsList;
+    private static <T> ArrayList<T> wrap(List<T> list) {
+        if (list instanceof ArrayList) {
+            return (ArrayList<T>) list;
         } else {
-            return new ArrayList<>(tagsList);
+            return new ArrayList(list);
         }
     }
 
@@ -369,6 +371,7 @@ public class TagLayout extends ViewGroup {
 
     public void selectTagPosition(int index) {
         getChildAt(index).setSelected(true);
+        mCurrentSelected= (TextView) getChildAt(index);
         mSelectedChildCount = 1;
     }
 
