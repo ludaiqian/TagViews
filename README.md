@@ -20,23 +20,23 @@
 
 ##xml
 <pre><code>
-   &lt;com.flqy.tagviews.TagLayout
-        android:id="@+id/skillTags"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        app:horizontalSpace="16dp"
-        app:verticalSpace="16dp"
-        app:tagTextSize="14sp"
-        app:tagTextColor="@color/selector_label_text"
-        app:tagBackground="@drawable/selector_label_tag"
-        app:tagTextHorizontalPadding="8dp"
-        app:tagTextVerticalPadding="4dp"
-        app:tagMinWidth="70dp"
-        app:tagSelectMode="multiple"&gt;
+     &lt;com.flqy.tagviews.TagLayout
+        android:id=&quot;@+id/skillTags&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:paddingRight=&quot;16dp&quot;
+        android:paddingLeft=&quot;16dp&quot;
+        android:paddingTop=&quot;16dp&quot;
+        android:paddingBottom=&quot;16dp&quot;
+        app:horizontalSpace=&quot;16dp&quot;
+        app:verticalSpace=&quot;16dp&quot;
+        app:tagTextSize=&quot;14sp&quot;
+        app:tagTextColor=&quot;@color/selector_label_text&quot;
+        app:tagBackground=&quot;@drawable/selector_label_tag&quot;
+        app:tagTextHorizontalPadding=&quot;8dp&quot;
+        app:tagTextVerticalPadding=&quot;4dp&quot;
+        app:tagMinWidth=&quot;70dp&quot;
+        app:tagSelectMode=&quot;multiple&quot;&gt;
 </code></pre>
 ##activity
 <pre><code>
