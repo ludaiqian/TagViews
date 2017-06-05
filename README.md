@@ -20,23 +20,23 @@
 
 ##xml
 <pre><code>
-   &lt;com.flqy.tagviews.TagLayout
-        android:id="@+id/skillTags"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        app:horizontalSpace="16dp"
-        app:verticalSpace="16dp"
-        app:tagTextSize="14sp"
-        app:tagTextColor="@color/selector_label_text"
-        app:tagBackground="@drawable/selector_label_tag"
-        app:tagTextHorizontalPadding="8dp"
-        app:tagTextVerticalPadding="4dp"
-        app:tagMinWidth="70dp"
-        app:tagSelectMode="multiple"&gt;
+     &lt;com.flqy.tagviews.TagLayout
+        android:id=&quot;@+id/skillTags&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:paddingRight=&quot;16dp&quot;
+        android:paddingLeft=&quot;16dp&quot;
+        android:paddingTop=&quot;16dp&quot;
+        android:paddingBottom=&quot;16dp&quot;
+        app:horizontalSpace=&quot;16dp&quot;
+        app:verticalSpace=&quot;16dp&quot;
+        app:tagTextSize=&quot;14sp&quot;
+        app:tagTextColor=&quot;@color/selector_label_text&quot;
+        app:tagBackground=&quot;@drawable/selector_label_tag&quot;
+        app:tagTextHorizontalPadding=&quot;8dp&quot;
+        app:tagTextVerticalPadding=&quot;4dp&quot;
+        app:tagMinWidth=&quot;70dp&quot;
+        app:tagSelectMode=&quot;multiple&quot;&gt;
 </code></pre>
 ##activity
 <pre><code>
@@ -63,33 +63,33 @@
 </code></pre>
 #attrs定义属性及属性描述如下：
 <pre><code>
- &lt;declare-styleable name="TagLayout">
-        &lt;attr name="horizontalSpace" format="dimension" "&gt;&lt;!-- tag之间的横向间距-->
-        &lt;attr name="verticalSpace" format="dimension" "&gt;&lt;!-- tag之间的纵向间距-->
-        &lt;attr name="maxLines" format="integer" "&gt;&lt;!-- 最大行数-->
-        &lt;attr name="tagResId" format="reference" "&gt;&lt;!-- tag TextView资源id，可将tag文字大小、颜色、背景、padding等单独配置提升复用性-->
-        &lt;attr name="tagTextSize" format="dimension" "&gt;&lt;!-- tag文字大小-->
-        &lt;attr name="tagBackground" format="reference" "&gt;&lt;!-- tag背景-->
-        &lt;attr name="tagMinWidth" format="dimension" "&gt;&lt;!-- tag最小宽度-->
-        &lt;attr name="tagTextColor" format="color" "&gt;&lt;!-- tag文字颜色-->
-        &lt;attr name="tagTextHorizontalPadding" format="dimension" "&gt;&lt;!-- tag 内部横向padding-->
-        &lt;attr name="tagTextVerticalPadding" format="dimension" "&gt;&lt;!-- tag 内部纵向padding-->
-        &lt;attr name="maximumSelectionCount" format="integer" "&gt;&lt;!-- 设置最多能够选择的个数-->
-        &lt;attr name="tagSelectMode" format="enum">&lt;!-- 单选 多选-->
-            &lt;enum name="single" value="1">&lt;/enum>&lt;!--单选-->
-            &lt;enum name="multiple" value="2">&lt;/enum>&lt;!--多选-->
-            &lt;enum name="none" value="0">&lt;/enum>&lt;!--不可选-->
-        &lt;/attr>
-        &lt;!--以下配置建议在列表中提高性能使用-->
-        &lt;attr name="cacheMode" format="enum">&lt;!-- 缓存方式，常用方式下没有影响，当tag需要在RecycleView或者ListView中显示，设置为lazy能显著提高性能-->
-            &lt;enum name="auto" value="0">&lt;/enum>&lt;!--自动根据当前tag数量来增删childView，默认方式-->
-            &lt;enum name="lazy" value="1">&lt;/enum>&lt;!--tag数量会根据最大tag数量来决定，大于会等于tag数量的childView自动隐藏，而不是删除，性能最佳-->
-            &lt;enum name="none" value="2">&lt;/enum>&lt;!--不使用缓存-->
-        &lt;/attr>
-        &lt;attr name="maxTags" format="integer" "&gt;&lt;!--tags最大显示数量-->
-        &lt;attr name="preCache" format="boolean" "&gt;&lt;!-- 预缓存，初始化时预先添加一定数量的childView-->
+ &lt;declare-styleable name=&quot;TagLayout&quot;&gt;
+        &lt;attr name=&quot;horizontalSpace&quot; format=&quot;dimension&quot; &quot;&gt;&lt;!-- tag之间的横向间距--&gt;
+        &lt;attr name=&quot;verticalSpace&quot; format=&quot;dimension&quot; &quot;&gt;&lt;!-- tag之间的纵向间距--&gt;
+        &lt;attr name=&quot;maxLines&quot; format=&quot;integer&quot; &quot;&gt;&lt;!-- 最大行数--&gt;
+        &lt;attr name=&quot;tagResId&quot; format=&quot;reference&quot; &quot;&gt;&lt;!-- tag TextView资源id，可将tag文字大小、颜色、背景、padding等单独配置提升复用性--&gt;
+        &lt;attr name=&quot;tagTextSize&quot; format=&quot;dimension&quot; &quot;&gt;&lt;!-- tag文字大小--&gt;
+        &lt;attr name=&quot;tagBackground&quot; format=&quot;reference&quot; &quot;&gt;&lt;!-- tag背景--&gt;
+        &lt;attr name=&quot;tagMinWidth&quot; format=&quot;dimension&quot; &quot;&gt;&lt;!-- tag最小宽度--&gt;
+        &lt;attr name=&quot;tagTextColor&quot; format=&quot;color&quot; &quot;&gt;&lt;!-- tag文字颜色--&gt;
+        &lt;attr name=&quot;tagTextHorizontalPadding&quot; format=&quot;dimension&quot; &quot;&gt;&lt;!-- tag 内部横向padding--&gt;
+        &lt;attr name=&quot;tagTextVerticalPadding&quot; format=&quot;dimension&quot; &quot;&gt;&lt;!-- tag 内部纵向padding--&gt;
+        &lt;attr name=&quot;maximumSelectionCount&quot; format=&quot;integer&quot; &quot;&gt;&lt;!-- 设置最多能够选择的个数--&gt;
+        &lt;attr name=&quot;tagSelectMode&quot; format=&quot;enum&quot;&gt;&lt;!-- 单选 多选--&gt;
+            &lt;enum name=&quot;single&quot; value=&quot;1&quot;&gt;&lt;/enum&gt;&lt;!--单选--&gt;
+            &lt;enum name=&quot;multiple&quot; value=&quot;2&quot;&gt;&lt;/enum&gt;&lt;!--多选--&gt;
+            &lt;enum name=&quot;none&quot; value=&quot;0&quot;&gt;&lt;/enum&gt;&lt;!--不可选--&gt;
+        &lt;/attr&gt;
+        &lt;!--以下配置建议在列表中提高性能使用--&gt;
+        &lt;attr name=&quot;cacheMode&quot; format=&quot;enum&quot;&gt;&lt;!-- 缓存方式，常用方式下没有影响，当tag需要在RecycleView或者ListView中显示，设置为lazy能显著提高性能--&gt;
+            &lt;enum name=&quot;auto&quot; value=&quot;0&quot;&gt;&lt;/enum&gt;&lt;!--自动根据当前tag数量来增删childView，默认方式--&gt;
+            &lt;enum name=&quot;lazy&quot; value=&quot;1&quot;&gt;&lt;/enum&gt;&lt;!--tag数量会根据最大tag数量来决定，大于会等于tag数量的childView自动隐藏，而不是删除，性能最佳--&gt;
+            &lt;enum name=&quot;none&quot; value=&quot;2&quot;&gt;&lt;/enum&gt;&lt;!--不使用缓存--&gt;
+        &lt;/attr&gt;
+        &lt;attr name=&quot;maxTags&quot; format=&quot;integer&quot; &quot;&gt;&lt;!--tags最大显示数量--&gt;
+        &lt;attr name=&quot;preCache&quot; format=&quot;boolean&quot; &quot;&gt;&lt;!-- 预缓存，初始化时预先添加一定数量的childView--&gt;
 
-    &lt;/declare-styleable>
+    &lt;/declare-styleable&gt;
  
 </code></pre>
 v1.0.0
