@@ -23,9 +23,9 @@ dependencies {
 //添加
 publish {
     userOrg = 'ludaiqian'//bintray.com用户名
-    groupId = 'com.flqy'//jcenter上的路径
+    groupId = 'com.flqy.tagviews'//jcenter上的路径
     artifactId = 'tagViews'//项目名称
-    publishVersion = '1.0.0'//版本号
+    publishVersion = '1.1.0'//版本号
     desc = 'TagLayout for add tag better'//描述
     website = 'https://github.com/ludaiqian/TagViews'
 }
