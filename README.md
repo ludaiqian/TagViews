@@ -1,24 +1,24 @@
 # TagViews
 
 
-#项目描述
+# 项目描述
 
 一个简单易用的标签控件，对性能做了细致的优化，在Listview/RecycleView中使用时，低端机型依然能够滑动流畅。
 
 
 
-#效果图
+## 效果图
 
  ![image](https://github.com/ludaiqian/TagViews/blob/master/sample/screenshot/phone_screen.gif)
  
-#导入
+## 导入
 
 目前无法导入，add to jcenter一直未被审核，开发人员可自行下载代码进行使用。
 
 
-#使用方式
+## 使用方式
 
-##xml
+### xml
 <pre><code>
      &lt;com.flqy.tagviews.TagLayout
         android:id=&quot;@+id/skillTags&quot;
@@ -38,7 +38,7 @@
         app:tagMinWidth=&quot;70dp&quot;
         app:tagSelectMode=&quot;multiple&quot;&gt;
 </code></pre>
-##activity
+### activity
 <pre><code>
   tagLayout = (TagLayout) findViewById(R.id.tagLayout);
   tagLayout.setTags("幽默风趣","诚实可靠","人脉广","健身控","有才华","为人大方","老司机","爱摄影","文艺范","怪蜀黍","高富帅","矮穷挫");
