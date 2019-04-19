@@ -97,7 +97,7 @@ public class TagLayout extends ViewGroup {
             mUsePreCache = a.getBoolean(R.styleable.TagLayout_preCache, false);
             mMaximumSelectionCount = a.getInteger(R.styleable.TagLayout_maximumSelectionCount, Integer.MAX_VALUE);
             mCacheMode = a.getInt(R.styleable.TagLayout_cacheMode, CACHE_MODE_AUTO);
-            mMaxTags = a.getInteger(R.styleable.TagLayout_maxLines, Integer.MAX_VALUE);
+            mMaxTags = a.getInteger(R.styleable.TagLayout_maxTags, Integer.MAX_VALUE);
             if (a.hasValue(R.styleable.TagLayout_tagResId)) {
                 mTagResId = a.getResourceId(R.styleable.TagLayout_tagResId, -1);
             }
