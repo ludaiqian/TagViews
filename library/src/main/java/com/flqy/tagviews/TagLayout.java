@@ -367,7 +367,7 @@ public class TagLayout extends ViewGroup {
         selectTagPositions(Arrays.asList(selectedPos));
     }
 
-        public void selectTagPositions(List<Integer> selectedPos) {
+    public void selectTagPositions(List<Integer> selectedPos) {
         if (mTagSelectMode != SELECT_MODE_MULTIPLE) {
             throw new UnsupportedOperationException("this method only support in SELECT_MODE_MULTIPLE!");
         }
