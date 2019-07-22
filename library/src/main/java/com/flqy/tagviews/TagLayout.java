@@ -367,19 +367,37 @@ public class TagLayout extends ViewGroup {
         selectTagPositions(Arrays.asList(selectedPos));
     }
 
-    public void selectTagPositions(List<Integer> selectedPos) {
-        for (int i = 0; i < selectedPos.size(); i++) {
-            getChildAt(selectedPos.get(i)).setSelected(true);
+        public void selectTagPositions(List<Integer> selectedPos) {
+        if (mTagSelectMode != SELECT_MODE_MULTIPLE) {
+            throw new UnsupportedOperationException("this method only support in SELECT_MODE_MULTIPLE!");
         }
-        mSelectedChildCount = selectedPos.size();
+        int childCount = getChildCount();
+        int selectedCount = 0;
+        for (int i = 0; i < childCount; i++) {
+            if (selectedPos.contains(i)) {
+                getChildAt(i).setSelected(true);
+                selectedCount++;
+            } else {
+                getChildAt(i).setSelected(false);
+            }
+        }
+        mSelectedChildCount = selectedCount;
     }
 
     public void selectTagPosition(int index) {
-        getChildAt(index).setSelected(true);
-        mCurrentSelected = (TextView) getChildAt(index);
-        mSelectedChildCount = 1;
+        if (mTagSelectMode != SELECT_MODE_SINGLE) {
+            throw new UnsupportedOperationException("this method only support in SELECT_MODE_SINGLE!");
+        }
+        TextView tagView = (TextView) getChildAt(index);
+        if (mCurrentSelected != tagView) {
+            if (mCurrentSelected != null) {
+                mCurrentSelected.setSelected(false);
+            }
+            mCurrentSelected = tagView;
+            mCurrentSelected.setSelected(true);
+            mSelectedChildCount = 1;
+        }
     }
-
     public void setMaximumSelectionCount(int maximumSelectionCount) {
         this.mMaximumSelectionCount = maximumSelectionCount;
     }
